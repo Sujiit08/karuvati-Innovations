@@ -12,6 +12,11 @@ html,body{height:100%;margin:0;background:#000;color:#cfd8ff;font-family:Sora,"S
 #root{height:100%}
 .intro{position:fixed;inset:0;background:#000;z-index:50}
 .intro canvas{width:100%;height:100%;display:block}
+  h('img',{
+  className:'intro-logo',
+  src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='kg' gradientUnits='userSpaceOnUse' x1='10' y1='10' x2='122' y2='110'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='.55' stop-color='%23bfe6ff'/%3E%3Cstop offset='1' stop-color='%234db8ff'/%3E%3C/linearGradient%3E%3ClinearGradient id='ig' gradientUnits='userSpaceOnUse' x1='104' y1='10' x2='122' y2='110'%3E%3Cstop offset='0' stop-color='%238fd8ff'/%3E%3Cstop offset='1' stop-color='%231f6bff'/%3E%3C/linearGradient%3E%3C/filter id='gl' x='-80%25' y='-30%25' width='260%25' height='160%25'%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' rx='14' fill='%23050a1c'/%3E%3Cg transform='translate%2814 17%29 scale%28.6%29'%3E%3Cg fill='url%28%23kg%29'%3E%3Cpolygon points='10%2C10 28%2C10 28%2C110 10%2C110'/%3E%3Cpolygon points='28%2C66 28%2C42 66%2C10 94%2C10'/%3E%3Cpolygon points='28%2C54 28%2C78 66%2C110 94%2C110'/%3E%3C/g%3E%3Cpolygon points='104%2C26 122%2C10 122%2C110 104%2C110' fill='url%28%23ig%29'/%3E%3C/g%3E%3C/svg%3E",
+  alt:"Karuvati Innovations Logo"
+}),
 .skip{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;padding:8px 16px;font:400 12px Sora,sans-serif;letter-spacing:.12em;color:rgba(200,215,255,.75);background:rgba(255,255,255,.04);border:1px solid rgba(140,170,255,.25);border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;transition:color .2s,border-color .2s,background .2s}
 .skip:hover,.skip:focus-visible{color:#fff;border-color:rgba(140,200,255,.7);background:rgba(120,140,255,.14);outline:none}
 .home{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(ellipse at 50% 40%,#0b1030 0%,#000 70%);animation:in 1.2s ease both}
@@ -20,6 +25,16 @@ html,body{height:100%;margin:0;background:#000;color:#cfd8ff;font-family:Sora,"S
 .home button:hover,.home button:focus-visible{border-color:#7fd6ff;outline:none}
 @keyframes in{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.home{animation:none}}
+  .intro-logo{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  z-index:55;
+  filter:drop-shadow(0 0 25px rgba(80,160,255,.8));
+}
 </style>
 </head>
 <body>
