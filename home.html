@@ -284,14 +284,93 @@ nav ul.open{transform:none;visibility:visible}
 <div><b>Professional Design</b><p>Polished, brand-focused visuals.</p></div><div><b>Fully Responsive</b><p>Layouts that adapt to every screen.</p></div><div><b>Modern UI/UX</b><p>Clear, easy-to-use interfaces.</p></div><div><b>Fast Performance</b><p>Lightweight, clean pages.</p></div>
 <div><b>Mobile Friendly</b><p>Designed for phones first.</p></div><div><b>Custom Solutions</b><p>Built around your requirements.</p></div><div><b>Clean Development</b><p>Organised, maintainable code.</p></div><div><b>Ongoing Support</b><p>Help with updates and changes.</p></div></div></div></section>
 
+<!-- =====================================================================
+ KARUVATI INNOVATIONS — PORTFOLIO PATCH (only the "Our Work" section)
+ 3 pieces: (1) CSS  (2) HTML  (3) JS.  Nothing else in your file changes.
+===================================================================== -->
+
+
+<!-- ============ (1) CSS ============
+ Paste at the very END of your existing <style> block (before </style>).
+ It only touches .work / .proj / .shot rules, so navbar, hero, colours, fonts,
+ animations and footer are untouched. -->
+<style>
+/* portfolio v6 */
+.work{grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.proj .cat{font:600 .72rem var(--d);letter-spacing:.14em;text-transform:uppercase;color:var(--neon)}
+.proj .meta{flex:1}
+.proj .meta .btn{margin-top:auto}
+.shot{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#070b18;border-radius:0 0 4px 4px}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .6s ease}
+.shot::after{content:"VIEW PROJECT";position:absolute;inset:0;display:grid;place-items:center;font:700 .85rem var(--d);letter-spacing:.2em;color:#fff;background:rgba(4,6,13,.62);opacity:0;transition:opacity .3s}
+.shot:hover img,.shot:focus-visible img{transform:scale(1.06)}
+.shot:hover::after,.shot:focus-visible::after{opacity:1}
+.proj[hidden]{display:none}
+@media(max-width:980px){.work{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.work{grid-template-columns:1fr}}
+@media(max-width:560px){.work{grid-template-columns:1fr}}
+@media(hover:none){.shot::after{opacity:0}}
+</style>
+
+
+<!-- ============ (2) HTML ============
+ Replace your whole existing <section id="portfolio"> ... </section> with this. -->
 <section id="portfolio"><div class="wrap"><h2 class="rv">Our Work</h2><p class="lead rv">Selected projects, live and ready to explore.</p>
-<div class="work">
-<article class="glass proj rv"><div class="mock"><div class="bar"><i></i><i></i><i></i><em>sujiit08.github.io/Business.com</em></div><div class="scr t"><div class="h"></div><div class="l" style="width:85%"></div><div class="l" style="width:65%"></div><div class="b"></div><div class="g"><span></span><span></span><span></span></div></div></div>
-<div class="meta"><h3>Business.com</h3><p>A professional business website with a clean, responsive layout.</p><a class="btn p" href="https://sujiit08.github.io/Business.com/" target="_blank" rel="noopener">View Project</a></div></article>
-<article class="glass proj rv"><div class="mock"><div class="bar"><i></i><i></i><i></i><em>sujiit08.github.io/SmileCare</em></div><div class="scr t"><div class="h" style="width:45%"></div><div class="l" style="width:80%"></div><div class="l" style="width:55%"></div><div class="b"></div><div class="g"><span></span><span></span><span></span></div></div></div>
-<div class="meta"><h3>SmileCare</h3><p>A modern, responsive website concept for a dental care service.</p><a class="btn p" href="https://sujiit08.github.io/SmileCare/" target="_blank" rel="noopener">View Project</a></div></article>
+<div class="work" id="work">
+
+<article class="glass proj rv">
+  <div class="mock"><div class="bar"><i></i><i></i><i></i><em>sujiit08.github.io/Business.com</em></div>
+    <a class="shot" href="https://sujiit08.github.io/Business.com/" target="_blank" rel="noopener" aria-label="View Business.com live website"
+       data-site="https://sujiit08.github.io/Business.com/" data-local="assets/previews/business.jpg"><img alt="Business.com homepage preview" width="1280" height="800" loading="lazy"></a></div>
+  <div class="meta"><span class="cat">Business Website</span><h3>Business.com</h3><p>A professional business website with a clean, responsive layout.</p>
+    <a class="btn p" href="https://sujiit08.github.io/Business.com/" target="_blank" rel="noopener">View Project →</a></div>
+</article>
+
+<article class="glass proj rv">
+  <div class="mock"><div class="bar"><i></i><i></i><i></i><em>sujiit08.github.io/SmileCare</em></div>
+    <a class="shot" href="https://sujiit08.github.io/SmileCare/" target="_blank" rel="noopener" aria-label="View SmileCare live website"
+       data-site="https://sujiit08.github.io/SmileCare/" data-local="assets/previews/smilecare.jpg"><img alt="SmileCare homepage preview" width="1280" height="800" loading="lazy"></a></div>
+  <div class="meta"><span class="cat">Dental Care Website</span><h3>SmileCare</h3><p>A modern, responsive website concept for a dental care service.</p>
+    <a class="btn p" href="https://sujiit08.github.io/SmileCare/" target="_blank" rel="noopener">View Project →</a></div>
+</article>
+
+<article class="glass proj rv">
+  <div class="mock"><div class="bar"><i></i><i></i><i></i><em>pixel-perfect-render-6807.lovable.app</em></div>
+    <a class="shot" href="https://pixel-perfect-render-6807.lovable.app/" target="_blank" rel="noopener" aria-label="View TitanX Fitness live website"
+       data-site="https://pixel-perfect-render-6807.lovable.app/" data-local="assets/previews/titanx.jpg"><img alt="TitanX Fitness homepage preview" width="1280" height="800" loading="lazy"></a></div>
+  <div class="meta"><span class="cat">Gym &amp; Fitness Website</span><h3>TitanX Fitness</h3><p>A cinematic, modern fitness website featuring immersive animations, interactive sections, membership plans, trainer showcases and a premium responsive experience.</p>
+    <a class="btn p" href="https://pixel-perfect-render-6807.lovable.app/" target="_blank" rel="noopener">View Project →</a></div>
+</article>
+
+<!-- Expense Tracker is hidden until its Vercel link is public (see notes). Delete the word "hidden" to show it. -->
+<article class="glass proj rv" hidden>
+  <div class="mock"><div class="bar"><i></i><i></i><i></i><em>expense-tracker-sujiit.vercel.app</em></div>
+    <a class="shot" href="https://expense-tracker-sujiit.vercel.app/" target="_blank" rel="noopener" aria-label="View Expense Tracker live website"
+       data-site="https://expense-tracker-sujiit.vercel.app/" data-local="assets/previews/expense-tracker.jpg"><img alt="Expense Tracker dashboard preview" width="1280" height="800" loading="lazy"></a></div>
+  <div class="meta"><span class="cat">Web Application</span><h3>Expense Tracker</h3><p>A modern personal expense management web application for tracking income, expenses, reports and financial activity with a clean responsive interface.</p>
+    <a class="btn p" href="https://expense-tracker-sujiit.vercel.app/" target="_blank" rel="noopener">View Project →</a></div>
+</article>
+
 </div><div class="soon rv">More Projects Coming Soon</div></div></section>
 
+
+<!-- ============ (3) JS ============
+ Paste at the end of your existing <script>, before </script>.
+ Each preview tries, in order:
+   1. your own saved screenshot  (assets/previews/*.jpg)  <- best, permanent
+   2. thum.io live screenshot of the real homepage
+   3. WordPress mShots screenshot of the real homepage
+ so a card never shows a broken image. -->
+<script>
+document.querySelectorAll('#work .shot').forEach(a=>{
+  const img=a.querySelector('img'),u=a.dataset.site,e=encodeURIComponent(u);
+  const src=[a.dataset.local,
+    'https://image.thum.io/get/width/1280/crop/800/'+u,
+    'https://s.wordpress.com/mshots/v1/'+e+'?w=1280&h=800'];
+  let i=0;img.onerror=()=>{if(++i<src.length)img.src=src[i];else a.style.display='none'};
+  img.src=src[0];
+});
+</script>
 <section id="process"><div class="wrap"><h2 class="rv">Our Process</h2><p class="lead rv">Four clear steps from idea to launch.</p>
 <div class="steps rv">
 <div class="step"><b>01</b><h3>DISCOVER</h3><p>Understand the client's idea, requirements and goals.</p></div>
